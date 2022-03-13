@@ -5,4 +5,8 @@ app.use(express.json());
 
 const product = require("./routes/productRoute");
 app.use("/api/v1", product);
+// Middleware for error
+const errorMiddleware = require("./middleware/error");
+app.use(errorMiddleware);
+
 module.exports = app;
